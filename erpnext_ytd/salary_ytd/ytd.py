@@ -1,7 +1,9 @@
 import frappe
+import dateutil.parser as parser
+
 
 def calculate_ytd(doc, method):
-  cur_year = doc.end_date.year
+  cur_year = parser.parse(doc.end_date).year
 
   salaries = frappe.get_all(
     "Salary Slip",
@@ -9,7 +11,7 @@ def calculate_ytd(doc, method):
     filters={'employee': doc.employee,
              'status': 'Submitted',
              'start_date': (">=", "{}-01-01".format(cur_year)),
-             'end_date': ("<",  doc.start_date.strftime('%Y-%m-%d'))},
+             'end_date': ("<",  doc.end_date)},
     order_by='end_date'
   )
 
