@@ -16,7 +16,7 @@ setup(
 	name='erpnext_ytd',
 	version=version,
 	description='Employee Salary Year to Date',
-	author='Alteroo',
+	author='Oshane Bailey',
 	author_email='oshane@alteroo.com',
 	packages=find_packages(),
 	zip_safe=False,
