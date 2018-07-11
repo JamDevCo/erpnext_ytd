@@ -2,6 +2,8 @@
 
 Employee Salary Year to Date
 
+The use case is that in many jurisdictions, knowing the YTD value for various salary components is useful to an employee from an awareness perspective (on printed salary slip) and is also very useful in varying tax calculations that need to know this value due to ways that tax are applied based on the value. By having this app installed, employees will be able to see how much they've currently earned and deductions paid during the company fiscal year.
+
 ## Setup Guide
 
 #### Prerequisite
@@ -35,6 +37,7 @@ cd /path/to/frappe-bench/
 bench --site <site-id> install-app erpnext_ytd
 ```
 
+- Restart your server and you should be good to go.
 
 
 #### License
