@@ -39,6 +39,9 @@ bench --site <site-id> install-app erpnext_ytd
 
 - Restart your server and you should be good to go.
 
+### Example of Year to Date
+<img src="https://preview.ibb.co/j08xCT/Sal_Slip_EMP_0001_00025.png" alt="Sal_Slip_EMP_0001_00025" border="0">
+
 
 #### License
 
