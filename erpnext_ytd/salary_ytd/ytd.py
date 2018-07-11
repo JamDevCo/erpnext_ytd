@@ -10,6 +10,7 @@ def calculate_ytd(doc, method):
   salary_year_to_date = salary_structure.salary_year_to_date
   salary_structure_dict = {}
 
+
   for item in salary_year_to_date:
     salary_structure_dict[item.salary_component] = {
       'abbr': item.abbr,
@@ -38,10 +39,16 @@ def calculate_ytd(doc, method):
     if item.salary_component in salary_structure_dict:
       salary_structure_dict[item.salary_component]['amount'] += item.amount
 
-  for item in doc.earnings:
+  for item in doc.deductions:
     if item.salary_component in salary_structure_dict:
       salary_structure_dict[item.salary_component]['amount'] += item.amount
 
-  for item in salary_structure_dict.values():
-    doc.append('salary_year_to_date', item)
+  if len(doc.salary_year_to_date) == 0:
+    for item in salary_structure_dict.values():
+      doc.append('salary_year_to_date', item)
+  else:
+      for item in doc.salary_year_to_date:
+        if item.salary_component in salary_structure_dict:
+           item.amount = salary_structure_dict[item.salary_component]['amount']
+
 
