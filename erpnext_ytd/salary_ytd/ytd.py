@@ -1,10 +1,17 @@
 import frappe
 
 def calculate_ytd(doc, method):
-  gp_to_date = 101
-  np_to_date = 101
+  cur_year = doc.end_date.year
 
-  salaries = frappe.get_all("Salary Slip", fields=["*"], filters={'employee': 'EMP/0001', 'status': 'Submitted', 'start_date': (">=", "2018-01-01"), 'end_date': ("<", "2018-07-01")}, order_by='end_date')
+  salaries = frappe.get_all(
+    "Salary Slip",
+    fields=["*"],
+    filters={'employee': doc.employee,
+             'status': 'Submitted',
+             'start_date': (">=", "{}-01-01".format(cur_year)),
+             'end_date': ("<",  doc.start_date.strftime('%Y-%m-%d'))},
+    order_by='end_date'
+  )
 
   salary_structure = frappe.get_doc('Salary Structure', doc.salary_structure)
   salary_year_to_date = salary_structure.salary_year_to_date
