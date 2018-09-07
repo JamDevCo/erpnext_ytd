@@ -19,7 +19,7 @@ At the moment, we need to manually create a Salary Year to Date table, which is 
 <img src="https://image.ibb.co/myU998/salary_year_to_date.png" />
 
 #### Customize the Salary Slip and Salary Structure to include the Salary Year to Date DocType
-- Go to http://<site>/desk#Form/Customize%20Form
+- Go to http://yoursite/desk#Form/Customize%20Form
 - Enter Salary Slip in the DocType field
 - Customize the Salary Slip Form and add a table field called Salary Year to Date, which uses the Salary Year to Date Table-DocType as seen in the screenshot below. Repeat this process for the Salary Structure Form
 
