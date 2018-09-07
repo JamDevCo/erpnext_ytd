@@ -6,8 +6,9 @@ The use case is that in many jurisdictions, knowing the YTD value for various sa
 
 ## Setup Guide
 
-#### Prerequisite
+### Prerequisite
 
+#### Creating Salary Year to Date DocType
 At the moment, we need to manually create a Salary Year to Date table, which is based on the Salary Detail table. Afterwards, we are going to add a table field to the Salary Slip and Salary Structure DocType.
 
 - Create a duplicated version of the Salary Detail and name it Salary Year to Date.
@@ -17,7 +18,10 @@ At the moment, we need to manually create a Salary Year to Date table, which is 
   - amount
 <img src="https://image.ibb.co/myU998/salary_year_to_date.png" />
 
-- Customize the Salary Slip DocType and add a table field called Salary Year to Date, which uses the Salary Year to Date Table-DocType as seen in the screenshot below. Repeat this process for the Salary Structure DocType
+#### Customize the Salary Slip and Salary Structure to include the Salary Year to Date DocType
+- Go to http://<site>/desk#Form/Customize%20Form
+- Enter Salary Slip in the DocType field
+- Customize the Salary Slip Form and add a table field called Salary Year to Date, which uses the Salary Year to Date Table-DocType as seen in the screenshot below. Repeat this process for the Salary Structure Form
 
 <img src="https://image.ibb.co/ch9WNT/row_salary_year_to_date.png" />
 
